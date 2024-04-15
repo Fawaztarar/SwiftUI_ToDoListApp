@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+class LoginViewViewModel: ObservableObject {
+    @Published var email = ""
+    @Published var password = ""
+    
+    func login() {
+        // Perform login action
+    }
+    func validate() -> Bool {
+        return !email.isEmpty && !password.isEmpty
+            
+    }
+}
