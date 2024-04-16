@@ -8,28 +8,33 @@
 import SwiftUI
 
 struct ToDoListView: View {
-    @State private var isLoggedIn = true
+    @StateObject var viewModel = ToDoListViewViewModel()
+
+
+    private let userId: String
+    init(userId: String) {
+        self.userId = userId
+        
+    }
     
     var body: some View {
-        VStack {
-            if isLoggedIn {
+        NavigationView {
+            VStack {
                 Text("Welcome to your account!")
-                Button(action: {
-                    // Sign out logic
-                    isLoggedIn = false
-                }) {
-                    Text("Sign Out")
-                }
-            } else {
-                LoginView()
+    }
+                .navigationTitle("To-Do List")
+}
+      
             }
         }
-    }
-}
+    
+
 
 
 struct ToDoListView_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoListView()
+        ToDoListView(userId: "")
     }
 }
+
+
