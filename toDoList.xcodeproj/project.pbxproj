@@ -29,6 +29,8 @@
 		400C557C2BCD73DB0070B1A4 /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400C557B2BCD73DB0070B1A4 /* ProfileViewViewModel.swift */; };
 		400C557E2BCD73F90070B1A4 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400C557D2BCD73F90070B1A4 /* LoginViewViewModel.swift */; };
 		400C55802BCD741F0070B1A4 /* RegisterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400C557F2BCD741F0070B1A4 /* RegisterViewViewModel.swift */; };
+		400C55822BCDE4D70070B1A4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400C55812BCDE4D70070B1A4 /* Extensions.swift */; };
+		400C55842BCDE9F80070B1A4 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400C55832BCDE9F80070B1A4 /* MainViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		400C557B2BCD73DB0070B1A4 /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
 		400C557D2BCD73F90070B1A4 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
 		400C557F2BCD741F0070B1A4 /* RegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewViewModel.swift; sourceTree = "<group>"; };
+		400C55812BCDE4D70070B1A4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		400C55832BCDE9F80070B1A4 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 				400C557B2BCD73DB0070B1A4 /* ProfileViewViewModel.swift */,
 				400C557D2BCD73F90070B1A4 /* LoginViewViewModel.swift */,
 				400C557F2BCD741F0070B1A4 /* RegisterViewViewModel.swift */,
+				400C55832BCDE9F80070B1A4 /* MainViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				400C55652BCD6D290070B1A4 /* GoogleService-Info.plist */,
+				400C55812BCDE4D70070B1A4 /* Extensions.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -348,11 +354,13 @@
 				400C55722BCD724A0070B1A4 /* RegisterView.swift in Sources */,
 				400C55762BCD734F0070B1A4 /* User.swift in Sources */,
 				400C55802BCD741F0070B1A4 /* RegisterViewViewModel.swift in Sources */,
+				400C55842BCDE9F80070B1A4 /* MainViewViewModel.swift in Sources */,
 				400C557E2BCD73F90070B1A4 /* LoginViewViewModel.swift in Sources */,
 				400C557C2BCD73DB0070B1A4 /* ProfileViewViewModel.swift in Sources */,
 				400C55702BCD72270070B1A4 /* LoginView.swift in Sources */,
 				400C55742BCD731E0070B1A4 /* ToDoListitemsView.swift in Sources */,
 				400C55352BCD66F30070B1A4 /* toDoListApp.swift in Sources */,
+				400C55822BCDE4D70070B1A4 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct ToDoListView: View {
+    @State private var isLoggedIn = true
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if isLoggedIn {
+                Text("Welcome to your account!")
+                Button(action: {
+                    // Sign out logic
+                    isLoggedIn = false
+                }) {
+                    Text("Sign Out")
+                }
+            } else {
+                LoginView()
+            }
+        }
     }
 }
 
-#Preview {
-    ToDoListView()
+
+struct ToDoListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ToDoListView()
+    }
 }

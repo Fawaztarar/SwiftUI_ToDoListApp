@@ -1,17 +1,8 @@
-//
-//  RegisterView.swift
-//  toDoList
-//
-//  Created by Fawaz Tarar on 15/04/2024.
-//
-
 import SwiftUI
 
 struct RegisterView: View {
-    @State private var name = ""
-    @State private var email = ""
-    @State private var password = ""
-    @State private var confirmPassword = ""
+    @StateObject var viewModel = RegisterViewViewModel() 
+
 
     var body: some View {
         NavigationView {
@@ -26,32 +17,30 @@ struct RegisterView: View {
                     .foregroundColor(.gray)
                     .padding(.bottom, 120)
                 
-                // Form with "Name", "Email", "Password", and "Confirm Password" fields
+                // Form with "Name", "Email", "Password" fields
                 // and a "Create Account" button
                 Form {
                     Section {
-                        TextField("Name", text: $name)
+                        TextField("Name", text: $viewModel.name)
                             .textFieldStyle(DefaultTextFieldStyle())
                             .disableAutocorrection(true)
                             .autocapitalization(.none)
                         
-                        TextField("Email", text: $email)
+                        TextField("Email", text: $viewModel.email)
                             .textFieldStyle(DefaultTextFieldStyle())
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
 
                         
-                        SecureField("Password", text: $password)
+                        SecureField("Password", text: $viewModel.password)
                             .textFieldStyle(DefaultTextFieldStyle())
                         
-                        SecureField("Confirm Password", text: $confirmPassword)
-                            .textFieldStyle(DefaultTextFieldStyle())
                     }
                     
                     Section {
                         Button(action: {
-                            // Perform registration action
+                            viewModel.register()
                         }) {
                             Text("Create Account")
                                 .foregroundColor(.white)
@@ -72,3 +61,7 @@ struct RegisterView_Previews: PreviewProvider {
         RegisterView()
     }
 }
+
+
+
+
