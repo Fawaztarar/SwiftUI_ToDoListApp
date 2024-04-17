@@ -32,6 +32,7 @@
 		400C55842BCDE9F80070B1A4 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400C55832BCDE9F80070B1A4 /* MainViewViewModel.swift */; };
 		409B8D2D2BCECEB400DE3A04 /* ToDoListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409B8D2C2BCECEB400DE3A04 /* ToDoListViewViewModel.swift */; };
 		409B8D2F2BCECFF900DE3A04 /* NewItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409B8D2E2BCECFF900DE3A04 /* NewItemViewViewModel.swift */; };
+		409B8D332BD0210D00DE3A04 /* ToDoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409B8D322BD0210D00DE3A04 /* ToDoListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		400C55832BCDE9F80070B1A4 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		409B8D2C2BCECEB400DE3A04 /* ToDoListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewViewModel.swift; sourceTree = "<group>"; };
 		409B8D2E2BCECFF900DE3A04 /* NewItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewViewModel.swift; sourceTree = "<group>"; };
+		409B8D322BD0210D00DE3A04 /* ToDoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				400C55752BCD734F0070B1A4 /* User.swift */,
+				409B8D322BD0210D00DE3A04 /* ToDoListItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				400C55802BCD741F0070B1A4 /* RegisterViewViewModel.swift in Sources */,
 				400C55842BCDE9F80070B1A4 /* MainViewViewModel.swift in Sources */,
 				400C557E2BCD73F90070B1A4 /* LoginViewViewModel.swift in Sources */,
+				409B8D332BD0210D00DE3A04 /* ToDoListItem.swift in Sources */,
 				400C557C2BCD73DB0070B1A4 /* ProfileViewViewModel.swift in Sources */,
 				400C55702BCD72270070B1A4 /* LoginView.swift in Sources */,
 				400C55742BCD731E0070B1A4 /* ToDoListitemsView.swift in Sources */,

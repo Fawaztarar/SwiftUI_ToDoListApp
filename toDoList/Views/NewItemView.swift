@@ -16,7 +16,7 @@ struct NewItemView: View {
     
     var body: some View {
         VStack {
-            Text("Add a new item")
+            Text(" New To Do ")
                 .font(.system(size: 32))
                 .bold()
                 .padding(.top, 100)
@@ -24,6 +24,7 @@ struct NewItemView: View {
             Form {
                 TextField("Title", text: $viewModel.title)
                     .textFieldStyle(DefaultTextFieldStyle())
+                    .font(.system(size: 16, weight: .medium))
                     
                 DatePicker("Due Date", selection: $viewModel.dueDate)
                     .datePickerStyle(GraphicalDatePickerStyle())

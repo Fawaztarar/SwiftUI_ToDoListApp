@@ -5,7 +5,9 @@
 //  Created by Fawaz Tarar on 16/04/2024.
 //
 
-import Foundation
+import FirebaseAuth
+import FirebaseFirestore
+import SwiftUI
 
 class NewItemViewViewModel: ObservableObject {
     
@@ -17,19 +19,47 @@ class NewItemViewViewModel: ObservableObject {
     }
 
     func save() {
+        guard canSave else {
+            return
+        }
+        // get current user id
+        guard let userId = Auth.auth().currentUser?.uid else {
+            return
+        }
 
-    }
-    var canSave: Bool { 
-    guard !title.trimmingCharacters(in:.whitespaces).isEmpty else {
-        return false
-    }
+        // create db model
+        let newId = UUID().uuidString
+        let newItem = ToDoListItem(
+            id: newId,
+            title: title,
+            dueDate: dueDate.timeIntervalSince1970,
+            createdAt: Date().timeIntervalSince1970,
+            isDone: false
+            
+        )
 
-    guard dueDate > Date().addingTimeInterval(-86400) else {
+        // save model to firestore
+        let db = Firestore.firestore()
+        db.collection("users")
+            .document(userId)
+            .collection("todos")
+            .document(newId)
+            .setData(newItem.asDictionary()!)
+    }
     
-        return false
-    }
+    var canSave: Bool { 
+        guard !title.trimmingCharacters(in:.whitespaces).isEmpty else {
+            return false
+        }
 
-    return true
+        guard dueDate > Date().addingTimeInterval(-86400) else {
+            return false
+        }
+
+        return true
     }
 }
+
+
+
 
