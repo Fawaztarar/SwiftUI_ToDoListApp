@@ -16,16 +16,11 @@ struct ProfileView: View{
                 
             }
             .navigationTitle("Profile")
-            .toolbar {
-                    Button(action: {
-                        // Add button action here
-                    }) {
-                        Label("Add", systemImage: "plus")
-                    }
+            
                 }
             }
         }
-    }
+    
 
 
 #Preview {
