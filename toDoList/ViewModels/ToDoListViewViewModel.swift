@@ -10,5 +10,12 @@ import Foundation
 class ToDoListViewViewModel: ObservableObject {
     @Published var isShowingNewItemView: Bool = false 
     
-    
+    init() {
+       
+    }
+//deleting the item
+    func deleteItem(id: String) {
+        
+
+}
 }
