@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ToDoListitemsView: View {
-    @StateObject var viewModel = ProfileViewViewModel()
+    @StateObject var viewModel = ToDoListitemsViewViewModel()
     let item: ToDoListItem
     var body: some View {
         // Hstack and Vstack to display the item with title and due date with timeinterval formatted

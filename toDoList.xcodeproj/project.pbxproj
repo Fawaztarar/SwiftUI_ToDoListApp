@@ -33,6 +33,7 @@
 		409B8D2D2BCECEB400DE3A04 /* ToDoListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409B8D2C2BCECEB400DE3A04 /* ToDoListViewViewModel.swift */; };
 		409B8D2F2BCECFF900DE3A04 /* NewItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409B8D2E2BCECFF900DE3A04 /* NewItemViewViewModel.swift */; };
 		409B8D332BD0210D00DE3A04 /* ToDoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409B8D322BD0210D00DE3A04 /* ToDoListItem.swift */; };
+		409B8D352BD1758200DE3A04 /* ToDoListitemsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409B8D342BD1758200DE3A04 /* ToDoListitemsViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		409B8D2C2BCECEB400DE3A04 /* ToDoListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewViewModel.swift; sourceTree = "<group>"; };
 		409B8D2E2BCECFF900DE3A04 /* NewItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewViewModel.swift; sourceTree = "<group>"; };
 		409B8D322BD0210D00DE3A04 /* ToDoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItem.swift; sourceTree = "<group>"; };
+		409B8D342BD1758200DE3A04 /* ToDoListitemsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListitemsViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			children = (
 				400C557B2BCD73DB0070B1A4 /* ProfileViewViewModel.swift */,
 				409B8D2C2BCECEB400DE3A04 /* ToDoListViewViewModel.swift */,
+				409B8D342BD1758200DE3A04 /* ToDoListitemsViewViewModel.swift */,
 				400C557D2BCD73F90070B1A4 /* LoginViewViewModel.swift */,
 				409B8D2E2BCECFF900DE3A04 /* NewItemViewViewModel.swift */,
 				400C557F2BCD741F0070B1A4 /* RegisterViewViewModel.swift */,
@@ -354,6 +357,7 @@
 			files = (
 				400C556E2BCD720C0070B1A4 /* NewItemView.swift in Sources */,
 				400C557A2BCD73AD0070B1A4 /* ProfileView.swift in Sources */,
+				409B8D352BD1758200DE3A04 /* ToDoListitemsViewViewModel.swift in Sources */,
 				400C55372BCD66F30070B1A4 /* MainView.swift in Sources */,
 				400C556C2BCD71D90070B1A4 /* ToDoListView.swift in Sources */,
 				409B8D2D2BCECEB400DE3A04 /* ToDoListViewViewModel.swift in Sources */,
