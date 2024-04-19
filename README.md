@@ -13,6 +13,32 @@ Technologies Used
 - Firebase Authentication: For handling user authentication.
 - Firestore: Used as a database to store user and to-do data.
 
+## Getting Started
+
+- Prerequisites
+Xcode 12 or later
+An Apple developer account
+
+- Installation
+Clone the repository:
+bash
+Copy code
+git clone https://github.com/Fawaztarar/SwiftUI_ToDoListApp.git
+
+- Install dependencies:
+Navigate to the project directory and run:
+bash
+Copy code
+pod install
+Open the project in Xcode:
+Open the .xcworkspace file to ensure all CocoaPods dependencies are included.
+- Configure Firebase:
+Create a Firebase project in the Firebase console.
+Add an iOS app in Firebase settings and download the GoogleService-Info.plist.
+Include this file in your Xcode project.
+- Running the App
+Build and run the app in Xcode. Make sure to select a simulator or a connected iOS device
+
 
 
 ## Architecture
