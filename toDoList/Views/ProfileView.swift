@@ -42,12 +42,15 @@ struct ProfileView: View {
     // 'profile' function returns a view for displaying user profile information
     @ViewBuilder
     func profile(user: User) -> some View {
-        Image(systemName: "person.circle")
-            .resizable()
-            .frame(width: 100, height: 100)
-            .clipShape(Circle())
-            .padding()
-            .foregroundColor(.blue)
+        Image(systemName: "person.circle.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 120, height: 120)
+                .padding()
+                .background(Color.blue.opacity(0.1))
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.blue, lineWidth: 2))
+                .shadow(radius: 5)
 
         VStack(alignment: .leading) {
             HStack {
@@ -82,3 +85,8 @@ struct ProfileView_Previews: PreviewProvider {
         ProfileView()
     }
 }
+
+
+
+
+
