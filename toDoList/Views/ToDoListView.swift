@@ -17,8 +17,7 @@ struct ToDoListView: View {
     init(userId: String) {
         self.userId = userId
         // Fetch data from server
-        self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos"
-        )
+        self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos")
         self._viewModel = StateObject(wrappedValue : ToDoListViewViewModel(userId: userId))
         
         
@@ -26,44 +25,35 @@ struct ToDoListView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-               
-
-            // Rest of your list view code
+    VStack {
+        List(items) { item in
+            ToDoListitemsView(item: item)
+            .swipeActions {
+                Button {
+                    viewModel.deleteItem(id: item.id)
+                } label: {
+                    Label("Delete", systemImage: "trash").tint(.red)
+                }
+            }
         }
-                // List of items in plain style
-                List(items) { item in
-                    ToDoListitemsView(item: item)
-                    // swipeaction with delete button
-                    .swipeActions {
-                        Button {
-                            // Delete button action here
-                            viewModel.deleteItem(id: item.id)
-                        } label: {
-                            Label("Delete", systemImage: "trash")
-                            //color red
-                                .tint(.red)
-                        }
-                    }
-                }
-                .listStyle(PlainListStyle())
+        .listStyle(PlainListStyle())
 
-                Text("Welcome to your account!")
-            }
-            .navigationTitle("To-Do List")
-            .toolbar {
-                Button(action: {
-                    // Add button action here
-                    viewModel.isShowingNewItemView = true
-                }) {
-                    Label("Add", systemImage: "plus")
-                }
-            }
-            .sheet(isPresented: $viewModel.isShowingNewItemView) {
-                NewItemView(newitemPresented: $viewModel.isShowingNewItemView)
-            }
+        Text("Welcome to your account!")
+    }
+    .navigationTitle("To-Do List")
+    .toolbar {
+        Button(action: {
+            viewModel.isShowingNewItemView = true
+        }) {
+            Label("Add", systemImage: "plus")
         }
     }
+    .sheet(isPresented: $viewModel.isShowingNewItemView) {
+        NewItemView(newitemPresented: $viewModel.isShowingNewItemView)
+    }
+}
+    }
+}
 
 
 struct ToDoListView_Previews: PreviewProvider {
