@@ -53,7 +53,8 @@ struct ProfileView: View {
             HStack {
                 Text("Name:")
                     .bold()
-                Text("Fawaz Tarar")
+                Text(user.name)
+                    .foregroundColor(.gray)
             }
             .padding(.bottom, 5)
             
