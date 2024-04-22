@@ -27,8 +27,7 @@ struct ToDoListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                WelcomeHeaderView(username: viewModel.username)
-                .padding([.top, .horizontal])
+               
 
             // Rest of your list view code
         }
@@ -65,7 +64,7 @@ struct ToDoListView: View {
             }
         }
     }
-}
+
 
 struct ToDoListView_Previews: PreviewProvider {
     static var previews: some View {
