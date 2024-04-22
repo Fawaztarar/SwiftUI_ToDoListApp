@@ -27,6 +27,11 @@ struct ToDoListView: View {
     var body: some View {
         NavigationView {
             VStack {
+                WelcomeHeaderView(username: viewModel.username)
+                .padding([.top, .horizontal])
+
+            // Rest of your list view code
+        }
                 // List of items in plain style
                 List(items) { item in
                     ToDoListitemsView(item: item)
