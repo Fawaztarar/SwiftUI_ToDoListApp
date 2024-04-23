@@ -122,11 +122,11 @@ struct RegisterView: View {
                         .foregroundColor(.white)
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .leading, endPoint: .trailing))
                         .cornerRadius(8)
                         .shadow(radius: 5)
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 20)
 
                 Spacer() // Pushes everything to the top
             }
