@@ -12,11 +12,11 @@ import FirebaseFirestore
 
 class ProfileViewViewModel: ObservableObject {
     
-
+    
     @Published var user: User? = nil
-
+    
     //fetch user data
-
+    
     func fetchUser() {
         guard let userId = Auth.auth().currentUser?.uid else {
             return
@@ -38,33 +38,47 @@ class ProfileViewViewModel: ObservableObject {
             }
         }
     }
-
+    
     func signOut() {
         do {
             try Auth.auth().signOut()
         } catch {
             print("Error signing out")
-        }      
+        }
     }
     // deleting a user permanently from the database
-     @Published var shouldNavigateToRegister = false
+    @Published var shouldNavigateToRegister = false
+    
     
     func deleteUser() {
-        // The deletion logic goes here
+        guard let userId = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
         let db = Firestore.firestore()
-        if let userId = Auth.auth().currentUser?.uid {
-            db.collection("users").document(userId).delete { [weak self] error in
-                if let error = error {
-                    print("Error deleting user: \(error.localizedDescription)")
-                } else {
-                    // User deleted successfully, now delete the authentication entry
-                    Auth.auth().currentUser?.delete { authError in
-                        if let authError = authError {
-                            print("Auth delete error: \(authError.localizedDescription)")
-                        } else {
-                            // If everything was successful, trigger navigation to RegisterView
-                            DispatchQueue.main.async {
-                                self?.shouldNavigateToRegister = true
+        // First, delete all todos associated with the user.
+        db.collection("users").document(userId).collection("todos").getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting todos documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    document.reference.delete()
+                }
+                
+                // After deleting todos, delete the user's document.
+                db.collection("users").document(userId).delete { [weak self] error in
+                    if let error = error {
+                        print("Error deleting user document: \(error.localizedDescription)")
+                    } else {
+                        // User document deleted successfully, now delete the authentication entry.
+                        Auth.auth().currentUser?.delete { authError in
+                            if let authError = authError {
+                                print("Auth delete error: \(authError.localizedDescription)")
+                            } else {
+                                // If everything was successful, trigger navigation to RegisterView.
+                                DispatchQueue.main.async {
+                                    self?.shouldNavigateToRegister = true
+                                }
                             }
                         }
                     }
@@ -72,5 +86,4 @@ class ProfileViewViewModel: ObservableObject {
             }
         }
     }
-} 
-
+}
