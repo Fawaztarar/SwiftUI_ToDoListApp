@@ -38,7 +38,9 @@ struct ToDoListView: View {
         }
         .listStyle(PlainListStyle())
 
+
 //        Text("Welcome to your account!")
+
     }
     .navigationTitle("To-Do List")
     .toolbar {
@@ -50,6 +52,9 @@ struct ToDoListView: View {
     }
     .sheet(isPresented: $viewModel.isShowingNewItemView) {
         NewItemView(newitemPresented: $viewModel.isShowingNewItemView)
+
+   
+
     }
 }
     }
