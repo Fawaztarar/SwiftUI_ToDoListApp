@@ -26,6 +26,12 @@ struct MainView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+//            if !viewModel.isSignedIn {
+                            RegisterView()
+                                .tabItem {
+                                    Label("Register", systemImage: "person.badge.plus")
+                                
+                        }
         
             ProfileView()
                 .tabItem {
@@ -40,3 +46,4 @@ struct MainView_Previews: PreviewProvider {
         MainView()
     }
 }
+

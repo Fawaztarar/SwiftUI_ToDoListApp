@@ -38,7 +38,7 @@ struct ToDoListView: View {
         }
         .listStyle(PlainListStyle())
 
-        Text("Welcome to your account!")
+//        Text("Welcome to your account!")
     }
     .navigationTitle("To-Do List")
     .toolbar {
@@ -61,4 +61,5 @@ struct ToDoListView_Previews: PreviewProvider {
         ToDoListView(userId: "rBP6YYvyExRy8B8e6UxsBXmVQQn2")
     }
 }
+
 
