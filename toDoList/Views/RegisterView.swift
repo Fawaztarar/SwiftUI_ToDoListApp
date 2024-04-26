@@ -1,58 +1,79 @@
+
+
+
+
+
+
+
 import SwiftUI
 
 struct RegisterView: View {
     @StateObject var viewModel = RegisterViewViewModel() 
 
-
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(alignment: .leading, spacing: 20) {
+                Spacer(minLength: 60) // Adds spacing at the top
+
                 Text("Register")
-                    .font(.system(size: 40))
-                    .fontWeight(.bold)
-                    .padding(.bottom, 1)
+                    .font(.largeTitle) // Adjusts for dynamic type
+                    .fontWeight(.semibold)
+                    .padding(.horizontal)
                 
                 Text("Start managing your tasks")
-                    .font(.system(size: 25))
-                    .foregroundColor(.gray)
-                    .padding(.bottom, 120)
+                    .font(.title2) // Adjusts for dynamic type
+                    .foregroundColor(.secondary) // Less focus than the title
+                    .padding(.horizontal)
                 
-                // Form with "Name", "Email", "Password" fields
-                // and a "Create Account" button
-                Form {
-                    Section {
+                VStack(alignment: .leading, spacing: 10) {
+                    Group {
                         TextField("Name", text: $viewModel.name)
-                            .textFieldStyle(DefaultTextFieldStyle())
-                            .disableAutocorrection(true)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .padding()
+                            .background(Color(.systemGray6))
+                            .cornerRadius(8)
                             .autocapitalization(.none)
-                        
+                            .disableAutocorrection(true)
+                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
+
                         TextField("Email", text: $viewModel.email)
-                            .textFieldStyle(DefaultTextFieldStyle())
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .padding()
+                            .background(Color(.systemGray6))
+                            .cornerRadius(8)
+                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
 
-                        
                         SecureField("Password", text: $viewModel.password)
-                            .textFieldStyle(DefaultTextFieldStyle())
-                        
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .padding()
+                            .background(Color(.systemGray6))
+                            .cornerRadius(8)
+                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
                     }
-                    
-                    Section {
-                        Button(action: {
-                            viewModel.register()
-                        }) {
-                            Text("Create Account")
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(Color.green)
-                                .cornerRadius(10)
-                        }
-                    }
+                    .padding(.horizontal)
                 }
+                
+                Button(action: viewModel.register) {
+                    Text("Create Account")
+                        .fontWeight(.medium)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(8)
+                        .shadow(radius: 5)
+                }
+                .padding(.horizontal, 20)
+
+                Spacer() // Pushes everything to the top
             }
+            .background(LinearGradient(gradient: Gradient(colors: [Color(.systemGray5), Color.white]), startPoint: .top, endPoint: .bottom)) // Gradient background
+            .edgesIgnoringSafeArea(.all)
         }
+        .navigationViewStyle(StackNavigationViewStyle()) // Handles the navigation style
     }
 }
 
@@ -61,7 +82,3 @@ struct RegisterView_Previews: PreviewProvider {
         RegisterView()
     }
 }
-
-
-
-
