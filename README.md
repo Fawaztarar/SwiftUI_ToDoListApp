@@ -2,6 +2,9 @@
 ## Tarar To Do List
 This iOS App allows users to manage their daily tasks efficiently. Built with Swift, the app features user authentication, and data storage capabilities, thanks to Firebase Authentication and Firestore. Users can create, edit, and delete their to-dos, as well as mark tasks as complete.
 
+Available on App Store
+https://apps.apple.com/gb/app/tarar-to-do/id6499149301
+
 ## Features
 
 - User Authentication: Users can sign up, sign in, and sign out.
